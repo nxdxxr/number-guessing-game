@@ -1,0 +1,40 @@
+/* filepath: custom.css */
+/* Custom styling for the number guessing game */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.card {
+  border: none;
+  border-radius: 10px;
+}
+.card-title {
+  font-weight: bold;
+  color: #667eea;
+  font-size: 2rem;
+}
+.btn-primary {
+  background-color: #667eea;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #764ba2;
+}
+.alert {
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+#attemptsContainer {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .container {
+    margin-top: 2rem;
+  }
+}
