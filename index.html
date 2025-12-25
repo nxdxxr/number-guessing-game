@@ -18,7 +18,24 @@
           <div class="card shadow">
             <div class="card-body">
               <h1 class="card-title text-center">เกมส์ทายตัวเลข</h1>
-              <p class="text-center text-muted">ทายตัวเลขตั้งแต่ 1 ถึง 100</p>
+              <p id="rangeText" class="text-center text-muted">
+                ทายตัวเลขตั้งแต่ 1 ถึง 100
+              </p>
+              <div class="mb-3">
+                <label for="difficultySelect" class="form-label"
+                  >เลือกระดับความยาก:</label
+                >
+                <select
+                  id="difficultySelect"
+                  class="form-select"
+                  onchange="changeDifficulty()"
+                >
+                  <option value="10">ง่าย (1-10)</option>
+                  <option value="50">ปานกลาง (1-50)</option>
+                  <option value="100" selected>ยาก (1-100)</option>
+                  <option value="1000">ยากมาก (1-1000)</option>
+                </select>
+              </div>
               <div class="mb-3">
                 <label for="guessInput" class="form-label">พิมพ์ตัวเลข:</label>
                 <input
