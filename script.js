@@ -15,15 +15,6 @@ function checkGuess() {
   const guessValue = parseInt(guessInput.value);
   const resultContainer = document.getElementById("resultContainer");
   // ... validation code ...
-  attemptCount++; // เพิ่มตรงนี้
-  if (guessValue === secretNumber) {
-    resultContainer.innerHTML = `
- <div class="alert alert-success" role="alert">
- <h5>✓ ถูกต้อง!</h5>
- <p>คุณทายถูกในครั้งที่ ${attemptCount}</p>
- </div>
- `;
-  }
 
   // Validation: ตรวจสอบว่าใส่ตัวเลขหรือไม่
   if (isNaN(guessValue) || guessInput.value === "") {
