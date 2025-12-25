@@ -3,9 +3,22 @@
 let secretNumber = 0;
 // ตัวแปรนับจํานวนครั้งที่ทาย
 let attemptCount = 0;
+// ตัวแปรเก็บค่าสูงสุดตามระดับความยาก
+let maxNumber = 100;
+
+// ฟังก์ชันเปลี่ยนระดับความยาก
+function changeDifficulty() {
+  const select = document.getElementById("difficultySelect");
+  maxNumber = parseInt(select.value);
+  document.getElementById(
+    "rangeText"
+  ).textContent = `ทายตัวเลขตั้งแต่ 1 ถึง ${maxNumber}`;
+  resetGame();
+}
+
 // ฟังก์ชันเริ่มเกมใหม่
 function initializeGame() {
-  secretNumber = Math.floor(Math.random() * 100) + 1;
+  secretNumber = Math.floor(Math.random() * maxNumber) + 1;
   attemptCount = 0;
   updateDisplay();
 }
@@ -34,11 +47,11 @@ function checkGuess() {
  `;
     return;
   }
-  // Validation: ตรวจสอบว่าอยู่ในช่วง 1-100 หรือไม่
-  if (guessValue < 1 || guessValue > 100) {
+  // Validation: ตรวจสอบว่าอยู่ในช่วงที่กำหนดหรือไม่
+  if (guessValue < 1 || guessValue > maxNumber) {
     resultContainer.innerHTML = `
  <div class="alert alert-danger" role="alert">
- กรุณาใส่ตัวเลขระหว่าง 1 ถึง 100!
+ กรุณาใส่ตัวเลขระหว่าง 1 ถึง ${maxNumber}!
  </div>
  `;
     return;
